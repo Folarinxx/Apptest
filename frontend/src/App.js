@@ -6,7 +6,7 @@ function App() {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/message")
+    axios.get("http://apptest-backend-env.eba-9akmxend.eu-west-1.elasticbeanstalk.com/api/message")
       .then(res => setMessages(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -14,7 +14,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:5000/api/message", {
+    await axios.post("http://apptest-backend-env.eba-9akmxend.eu-west-1.elasticbeanstalk.com/api/message", {
       text: text
     });
 
